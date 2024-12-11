@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Style Background</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+            /* Subtle base gradient */
+            overflow: hidden;
+            /* Prevents scrollbars if shapes extend beyond the screen */
+            position: relative;
+        }
+
+        /* Top decorative band */
+        .top-band {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            /* Adjust height as per design */
+            background: linear-gradient(to right, #ff9a76, #ff6b6b);
+            /* Example vibrant gradient */
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+            /* Slanted bottom edge */
+            z-index: 1;
+        }
+
+        /* Bottom decorative band */
+        .bottom-band {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            /* Adjust height as per design */
+            background: linear-gradient(to left, #48c6ef, #6f86d6);
+            /* Example gradient */
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+            /* Slanted top edge */
+            z-index: 1;
+        }
+
+        /* Subtle overlay shapes (circles or polygons) */
+        .overlay-circle {
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.3);
+            /* Semi-transparent white */
+            border-radius: 50%;
+            /* Makes it circular */
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .overlay-circle-small {
+            position: absolute;
+            bottom: 20%;
+            right: 15%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-band"></div>
+    <div class="bottom-band"></div>
+    <div class="overlay-circle"></div>
+    <div class="overlay-circle-small"></div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h1>Welcome to LEO Polymer Industries</h1>
+        <p>We invite you to connect with us to explore our offerings...</p>
+    </div>
+</body>
+
+</html>
